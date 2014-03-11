@@ -21,6 +21,7 @@
 		1AF44F9D17F58A6B00D213C2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF44F7F17F58A6A00D213C2 /* UIKit.framework */; };
 		1AF44FA517F58A6B00D213C2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AF44FA317F58A6B00D213C2 /* InfoPlist.strings */; };
 		1AF44FA717F58A6B00D213C2 /* SimpleChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF44FA617F58A6B00D213C2 /* SimpleChatTests.m */; };
+		1AF44FB117F58F1A00D213C2 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF44FB017F58F1A00D213C2 /* MultipeerConnectivity.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,13 +47,14 @@
 		1AF44F8B17F58A6A00D213C2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1AF44F8E17F58A6A00D213C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1AF44F9017F58A6A00D213C2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1AF44F9117F58A6A00D213C2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1AF44F9117F58A6A00D213C2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ViewController.m; sourceTree = "<group>"; wrapsLines = 1; };
 		1AF44F9317F58A6A00D213C2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1AF44F9917F58A6B00D213C2 /* SimpleChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF44F9A17F58A6B00D213C2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		1AF44FA217F58A6B00D213C2 /* SimpleChatTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleChatTests-Info.plist"; sourceTree = "<group>"; };
 		1AF44FA417F58A6B00D213C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1AF44FA617F58A6B00D213C2 /* SimpleChatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleChatTests.m; sourceTree = "<group>"; };
+		1AF44FB017F58F1A00D213C2 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AF44FB117F58F1A00D213C2 /* MultipeerConnectivity.framework in Frameworks */,
 				1AF44F7E17F58A6A00D213C2 /* CoreGraphics.framework in Frameworks */,
 				1AF44F8017F58A6A00D213C2 /* UIKit.framework in Frameworks */,
 				1AF44F7C17F58A6A00D213C2 /* Foundation.framework in Frameworks */,
@@ -101,6 +104,7 @@
 		1AF44F7A17F58A6A00D213C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1AF44FB017F58F1A00D213C2 /* MultipeerConnectivity.framework */,
 				1AF44F7B17F58A6A00D213C2 /* Foundation.framework */,
 				1AF44F7D17F58A6A00D213C2 /* CoreGraphics.framework */,
 				1AF44F7F17F58A6A00D213C2 /* UIKit.framework */,
@@ -199,6 +203,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Tung Nguyen";
 				TargetAttributes = {
+					1AF44F7717F58A6A00D213C2 = {
+						DevelopmentTeam = PK8D288WES;
+					};
 					1AF44F9817F58A6B00D213C2 = {
 						TestTargetID = 1AF44F7717F58A6A00D213C2;
 					};
@@ -378,10 +385,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SimpleChat/SimpleChat-Prefix.pch";
 				INFOPLIST_FILE = "SimpleChat/SimpleChat-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -391,10 +401,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SimpleChat/SimpleChat-Prefix.pch";
 				INFOPLIST_FILE = "SimpleChat/SimpleChat-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -460,6 +473,7 @@
 				1AF44FAC17F58A6B00D213C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1AF44FAD17F58A6B00D213C2 /* Build configuration list for PBXNativeTarget "SimpleChatTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +482,7 @@
 				1AF44FAF17F58A6B00D213C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
