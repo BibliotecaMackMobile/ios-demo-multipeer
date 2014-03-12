@@ -67,15 +67,15 @@
     [self.advertiser start];
 }
 
-- (void) showBrowserVC{
+- (void) showBrowserVC {
     [self presentViewController:self.browserVC animated:YES completion:nil];
 }
 
-- (void) dismissBrowserVC{
+- (void) dismissBrowserVC {
     [self.browserVC dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void) sendText{
+- (void) sendText {
     //  Retrieve text from chat box and clear chat box
     NSString *message = self.chatBox.text;
     self.chatBox.text = @"";
@@ -95,10 +95,10 @@
     //  Create the final text to append
     NSString *finalText;
     if (peer == self.myPeerID) {
-        finalText = [NSString stringWithFormat:@"\nme: %@ \n", message];
+        finalText = [NSString stringWithFormat:@"\nEu disse: %@ \n", message];
     }
     else{
-        finalText = [NSString stringWithFormat:@"\n%@: %@ \n", peer.displayName, message];
+        finalText = [NSString stringWithFormat:@"\n%@ disse: %@ \n", peer.displayName, message];
     }
     
     //  Append text to text box
@@ -143,17 +143,30 @@
 }
 
 // Received a byte stream from remote peer
-- (void)session:(MCSession *)session didReceiveStream:(NSInputStream *)stream withName:(NSString *)streamName fromPeer:(MCPeerID *)peerID{
+- (void)session:(MCSession *)session
+didReceiveStream:(NSInputStream *)stream
+       withName:(NSString *)streamName
+       fromPeer:(MCPeerID *)peerID{
     
 }
 
 // Start receiving a resource from remote peer
-- (void)session:(MCSession *)session didStartReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID withProgress:(NSProgress *)progress{
+- (void)session:(MCSession *)session
+didStartReceivingResourceWithName:(NSString *)resourceName
+       fromPeer:(MCPeerID *)peerID
+   withProgress:(NSProgress *)progress{
     
 }
 
-// Finished receiving a resource from remote peer and saved the content in a temporary location - the app is responsible for moving the file to a permanent location within its sandbox
-- (void)session:(MCSession *)session didFinishReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID atURL:(NSURL *)localURL withError:(NSError *)error{
+// Finished receiving a resource from remote peer and saved the content in a temporary location
+//the app is responsible for moving the file to a permanent location within its sandbox
+- (void)session:(MCSession *)session
+didFinishReceivingResourceWithName:(NSString *)resourceName
+       fromPeer:(MCPeerID *)peerID
+          atURL:(NSURL *)localURL
+      withError:(NSError *)error{
     
 }
+
+
 @end
